@@ -8,6 +8,7 @@
 
 # editor
 *.vscode/
+*.idea/
 
 # production
 /build
