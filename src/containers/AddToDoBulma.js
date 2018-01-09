@@ -1,12 +1,13 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../actions'
+import { addTodo, setVisibilityFilter } from '../actions'
 import 'bulma/css/bulma.css'
 
 
 let AddTodo = ({ dispatch }) => {
     let input
+    let selection
 
     return (
         <div>
@@ -27,6 +28,7 @@ let AddTodo = ({ dispatch }) => {
                             onClick = { e => {
                                 e.preventDefault()
                                 if (!input.value.trim()){
+                                    alert('please enter a value')
                                     return
                                 }
                                 dispatch(addTodo(input.value))
@@ -41,10 +43,13 @@ let AddTodo = ({ dispatch }) => {
                 <label className="label">Show Todos:</label>
                 <div className="control">
                     <div className="select">
-                        <select>
-                            <option>All</option>
-                            <option>Active</option>
-                            <option>Completed</option>
+                        <select  ref = { node => { selection = node }} onClick = { 
+                                e => {
+                                    dispatch(setVisibilityFilter(selection.value))
+                                    }}>
+                            <option value="SHOW_ALL">All</option>
+                            <option value="SHOW_ACTIVE">Active</option>
+                            <option value="SHOW_COMPLETED">Completed</option>
                         </select>
                     </div>
                 </div>
