@@ -27,3 +27,7 @@
   to { transform: rotate(360deg); }
 }
 
+.notification{
+  text-align: center;
+}
+

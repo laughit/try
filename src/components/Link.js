@@ -12,10 +12,7 @@ const Link = ({ active, children, onClick }) => {
              e.preventDefault()
              onClick()
          }}
-        >
-        
-        
-        { children }</a>
+        >{ children }</a>
 
     )
  }
