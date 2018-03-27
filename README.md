@@ -1,1 +1,1 @@
-This is a todo list app created using React and Redux
+Welcome to my website. I hope you will have fun browsing it.
